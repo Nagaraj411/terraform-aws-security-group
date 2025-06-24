@@ -5,7 +5,7 @@ resource "aws_security_group" "main" {
 
     tags = merge(
         var.sg_tags, # this allows other users to specify their own tags for the security group
-        locals.common_tags, # common tags defined in locals.tf
+        local.common_tags, # common tags defined in locals.tf
         {
             Name = "${var.project}-${var.environment}-${var.sg_name}" # Name of the security group roboshop-dev-frontend
         }
